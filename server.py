@@ -85,14 +85,14 @@ while active:
                     play(clicked_row, clicked_col, 'X')
 
                     # After a player's move cheks if there is a winner
-                    if (check_win()):
-                        print("\nPRESS R TO RESTART THE GAME\n\n")
-                        gameover = True
+                 
                     if not gameover:
                         send_data = '{}-{}-{}-{}'.format(clicked_row, clicked_col, 'yourturn', playing).encode()
                         conn.send(send_data)
                         turn = False
-
+                    if (check_win()):
+                        print("\nPRESS R TO RESTART THE GAME\n\n")
+                        gameover = True
         # Waits for key press
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_r:

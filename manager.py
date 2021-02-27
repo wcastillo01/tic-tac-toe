@@ -144,10 +144,11 @@ def play(row, col, player):
     global gameover
     board[row][col] = player
     print_board(player)
+    draw_play()
     if check_win():
         gameover = True
     check_win()
-    draw_play()
+   
 
 def random_number():
     from random import seed
